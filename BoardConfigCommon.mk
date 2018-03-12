@@ -25,18 +25,6 @@
 # Common Tree Path
 COMMON_PATH := device/xiaomi/sdm660-common
 
-# A/B
-ifeq ($(ENABLE_AB), true)
-AB_OTA_UPDATER := true
-AB_OTA_PARTITIONS ?= \
-    boot \
-    system \
-    vendor
-BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
-BOARD_USES_RECOVERY_AS_BOOT := true
-TARGET_NO_RECOVERY := true
-endif
-
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "qualcomm-hidl"
 
@@ -170,7 +158,11 @@ TARGET_PROVIDES_KEYMASTER := true
 # Metadata
 BOARD_USES_METADATA_PARTITION := true
 
+# LMKD
+TARGET_LMKD_STATS_LOG := true
+
 # Partitions
+BOARD_BUILD_SYSTEM_ROOT_IMAGE := true
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
