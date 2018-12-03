@@ -107,6 +107,9 @@ on init
     write /dev/cpuset/application/background/cpus 0-7
     write /dev/cpuset/application/cpus 0-7
 
+on init
+    write /sys/module/lpm_levels/parameters/sleep_disabled Y
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
