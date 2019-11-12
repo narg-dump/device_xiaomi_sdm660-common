@@ -399,6 +399,7 @@ DEVICE_PACKAGE_OVERLAYS += \
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+    $(COMMON_PATH)/overlay/packages/apps/Snap \
     $(COMMON_PATH)/overlay-system
 
 # Permissions
