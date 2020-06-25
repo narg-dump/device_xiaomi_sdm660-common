@@ -30,7 +30,7 @@ import /vendor/etc/init/hw/init.msm.usb.configfs.rc
 import /vendor/etc/init/hw/init.target.rc
 import /vendor/etc/init/hw/init.performance.sdm660.rc
 import /vendor/etc/init/hw/init.device.rc
-import /vendor/etc/init/hw/init.xiaomi_parts.rc
+import /vendor/etc/init/hw/init.xiaomi.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -751,7 +751,6 @@ service vendor.ssr_diag /system/vendor/bin/ssr_diag
     user system
     group system
     disabled
-
 
 service vendor.msm_irqbalance /vendor/bin/msm_irqbalance -f /system/vendor/etc/msm_irqbalance.conf
     class core
