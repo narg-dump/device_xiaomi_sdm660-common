@@ -1,0 +1,1 @@
+allow priv_app bt_firmware_file:filesystem { getattr };
