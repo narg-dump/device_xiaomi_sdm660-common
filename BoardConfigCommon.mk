@@ -139,20 +139,10 @@ LOC_HIDL_VERSION := 3.0
 
 # HIDL
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(COMMON_PATH)/framework_manifest.xml
-ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-DEVICE_MANIFEST_FILE := $(shell sed 's/3.0/4.0/g' $(COMMON_PATH)/manifest.xml > manifest.xml && echo manifest.xml)
-else
 DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
-endif
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
 
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
-
-# Init
-TARGET_INIT_VENDOR_LIB := //$(COMMON_PATH):libinit_sdm660
-TARGET_PLATFORM_DEVICE_BASE := /devices/soc/
-TARGET_RECOVERY_DEVICE_MODULES := libinit_sdm660
 
 # IPA
 USE_DEVICE_SPECIFIC_DATA_IPA_CFG_MGR := true
@@ -183,11 +173,9 @@ BOARD_USES_METADATA_PARTITION := true
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144
 BOARD_BOOTIMAGE_PARTITION_SIZE := 67108864
-ifneq ($(ENABLE_AB), true)
 BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 67108864
-endif
 BOARD_SYSTEMIMAGE_PARTITION_TYPE := ext4
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3221225472
 BOARD_VENDORIMAGE_PARTITION_SIZE := 2147483648
@@ -221,13 +209,7 @@ BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_QCOM_BSP := false
 
 # Recovery
-ifneq ($(filter lavender,$(TARGET_DEVICE)),)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_A.qcom
-else ifeq ($(ENABLE_AB), true)
-TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab_AB.qcom
-else
 TARGET_RECOVERY_FSTAB := $(COMMON_PATH)/rootdir/etc/fstab.qcom
-endif
 BOARD_HAS_LARGE_FILESYSTEM := true
 
 # Renderscript
@@ -277,7 +259,7 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 # Inherit the proprietary files
 -include vendor/xiaomi/sdm660-common/BoardConfigVendor.mk
 
-# Caf stuff
+# Track qcom-caf
 PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8998/display
 PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8998/audio
 PRODUCT_SOONG_NAMESPACES += hardware/qcom-caf/msm8998/media

@@ -21,11 +21,6 @@
 # definition file).
 #
 
-# Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
-$(call inherit-product-if-exists, build/target/product/embedded.mk)
-
 # Enable updating of APEXes
 ifeq ($(ENABLE_APEX), true)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
@@ -213,8 +208,8 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libqdMetaData.system \
     libtinyxml \
-    vendor.display.config@1.9 \
-    vendor.display.config@1.9_vendor
+    vendor.display.config@1.1 \
+    vendor.display.config@1.1_vendor
 
 # DRM
 PRODUCT_PACKAGES += \
@@ -350,10 +345,6 @@ PRODUCT_COPY_FILES += \
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-service.xiaomi_sdm660
-
-# LiveDisplay native
-PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -529,9 +520,6 @@ PRODUCT_PACKAGES += \
 # Sensor Config
 PRODUCT_COPY_FILES += \
     $(COMMON_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
-
-# Security Patch
-BOOT_SECURITY_PATCH := $(PLATFORM_SECURITY_PATCH)
 
 # Shims
 PRODUCT_PACKAGES += \
