@@ -5,10 +5,8 @@ type sysfs_info, fs_type, sysfs_type;
 
 allow ueventd ir_dev_file:chr_file { create setattr };
 
-# Touchscreen wake_gesture
-type sysfs_tap_to_wake, sysfs_type, fs_type;
+# Touchscreen double_tap
 type sysfs_touchpanel, fs_type, sysfs_type;
-type proc_dt2w, fs_type, proc_type;
 
 # Fingerprint
 type fingerprintd_device, file_type, dev_type;

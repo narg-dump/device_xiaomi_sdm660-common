@@ -201,6 +201,10 @@ on boot
     chown system system /sys/class/graphics/fb0/msm_fb_cabc_still
     chown system system /sys/class/graphics/fb0/msm_fb_hbm
 
+#DT2W
+    chown system system /sys/touchpanel/double_tap
+    chmod 0660 /sys/touchpanel/double_tap
+
 #Peripheral manager
 service vendor.per_mgr /system/vendor/bin/pm-service
     class core
