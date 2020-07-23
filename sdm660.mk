@@ -363,10 +363,10 @@ PRODUCT_PACKAGES += \
     product_charger_res_images
 
 # RRO configuration
-TARGET_USES_RRO := true
-PRODUCT_ENFORCE_RRO_TARGETS := *
-PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(COMMON_PATH)/overlay-system
+#TARGET_USES_RRO := true
+#PRODUCT_ENFORCE_RRO_TARGETS := *
+#PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
+#    $(COMMON_PATH)/overlay-system
 
 # Permissions
 PRODUCT_COPY_FILES += \
