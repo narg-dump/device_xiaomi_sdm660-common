@@ -232,14 +232,6 @@ vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|ab5d46cbf14ce90ab44aaab4dc1520378c568033
 vendor/lib64/libdpmqmihal.so|24b4b7ece0f0ba468e59d2ddcdaa62733635216b
 
-# DRM-Widevine
-vendor/bin/hw/android.hardware.drm@1.2-service.widevine
-vendor/etc/init/android.hardware.drm@1.2-service.widevine.rc
-vendor/lib/liboemcrypto.so
-vendor/lib64/libwvhidl.so
-vendor/lib64/liboemcrypto.so
-vendor/lib64/mediadrm/libwvdrmengine.so
-
 # DRM - from LA.UM.8.2.r1-06700-sdm660.0
 vendor/bin/qseecomd|a673f923a343a98007410022c1dc9acb5d440889
 vendor/lib64/libcpion.so|fe301ba49fd4b70993e9a288595957715c38a73b
