@@ -336,6 +336,10 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
+# Hide Notch
+PRODUCT_PACKAGES += \
+    NoCutoutOverlay
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
