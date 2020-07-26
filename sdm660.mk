@@ -359,7 +359,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-system
+    $(COMMON_PATH)/overlay-system \
     $(COMMON_PATH)/overlay-lineage
 
 # Offline charger
@@ -371,7 +371,9 @@ PRODUCT_PACKAGES += \
 TARGET_USES_RRO := true
 PRODUCT_ENFORCE_RRO_TARGETS := *
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
-    $(COMMON_PATH)/overlay-system
+    $(COMMON_PATH)/overlay \
+    $(COMMON_PATH)/overlay-system \
+    $(COMMON_PATH)/overlay-lineage
 
 # Permissions
 PRODUCT_COPY_FILES += \
