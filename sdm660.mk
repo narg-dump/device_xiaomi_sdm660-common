@@ -491,6 +491,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.sdm660_shim
 
+# Signapk
+PRODUCT_HOST_PACKAGES += \
+    signapk
+
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(COMMON_PATH)
