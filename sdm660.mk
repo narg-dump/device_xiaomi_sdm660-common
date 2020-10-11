@@ -270,7 +270,8 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.xiaomi.rc \
     init.performance.sdm660.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    init.safailnet.rc
 
 # FM
 ifeq ($(BOARD_HAVE_QCOM_FM),true)
