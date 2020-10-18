@@ -359,7 +359,7 @@ PRODUCT_PACKAGES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(COMMON_PATH)/overlay \
-    $(COMMON_PATH)/overlay-system
+    $(COMMON_PATH)/overlay-system \
     $(COMMON_PATH)/overlay-lineage
 
 # Offline charger
